@@ -21,17 +21,31 @@ public class ShiroConfig {
         manager.setRealm(myRealm());
         return  manager;
     }
+    /**
+     * Shiro内置过滤器，可以实现权限相关的拦截器
+     *    常用的过滤器：
+     *       anon: 无需认证（登录）可以访问
+     *       authc: 必须认证才可以访问
+     *       user: 如果使用rememberMe的功能可以直接访问
+     *       perms： 该资源必须得到资源权限才可以访问
+     *       role: 该资源必须得到角色权限才可以访问
+     */
+
     @Bean
     ShiroFilterFactoryBean shiroFilterFactoryBean(){
         ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
         bean.setSecurityManager(securityManager());
         bean.setLoginUrl("/login");
         bean.setSuccessUrl("/index");
-        bean.setUnauthorizedUrl("/unauthorizedurl");
+        bean.setUnauthorizedUrl("/noAuth");
 
         Map<String,String> map = new LinkedHashMap<>();
-        map.put("/doLogin","anon");
-        map.put("/**","authc");
+        map.put("/login","anon");
+
+        map.put("/test","perms[user:test]");
+        map.put("/test2","perms[user:test2]");
+
+        map.put("/*","authc");
         bean.setFilterChainDefinitionMap(map);
         return bean;
 
