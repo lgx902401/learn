@@ -1,4 +1,4 @@
-package com.example.shiro.shiro2;
+package com.example.shiro2;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController2 {
-    @PostMapping("/doLogin")
+    @PostMapping("/doLogin2")
     public void doLogin(String username,String password){
         Subject subject = SecurityUtils.getSubject();
         try {
@@ -21,11 +21,11 @@ public class LoginController2 {
             System.out.println("登陆失败！");
         }
     }
-    @GetMapping("/hello")
+    @GetMapping("/hello2")
     public String hello(){
         return "hello";
     }
-    @GetMapping("login")
+    @GetMapping("login2")
     public String login(){
         return "please login!";
     }

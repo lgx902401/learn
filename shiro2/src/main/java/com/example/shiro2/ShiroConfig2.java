@@ -1,34 +1,30 @@
-package com.example.shiro.shiro2;
+package com.example.shiro2;
 
-import com.example.shiro.shiro1.MyRealm;
-import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 @Configuration
 public class ShiroConfig2 {
     @Bean
-    MyRealm myRealm(){
-        return new MyRealm();
+    MyRealm2 myRealm2() {
+        return new MyRealm2();
     }
+
     @Bean
-  DefaultWebSecurityManager securityManager(){
+    DefaultWebSecurityManager securityManager2() {
         DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
-        manager.setRealm(myRealm());
+        manager.setRealm(myRealm2());
         return manager;
     }
+
     @Bean
-    ShiroFilterChainDefinition shiroFilterChainDefinition(){
+    ShiroFilterChainDefinition shiroFilterChainDefinition2() {
         DefaultShiroFilterChainDefinition definition = new DefaultShiroFilterChainDefinition();
-        definition.addPathDefinition("/doLogin2","anon");
-        definition.addPathDefinition("/**","authc");
+        definition.addPathDefinition("/doLogin2", "anon");
+        definition.addPathDefinition("/**", "authc");
         return definition;
     }
 }
