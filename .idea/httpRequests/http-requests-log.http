@@ -1,0 +1,66 @@
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+###
+
